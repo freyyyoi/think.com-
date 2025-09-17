@@ -1,0 +1,417 @@
+/* Font & body */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Judul homepage */
+.homepage-title {
+  text-align: center;
+  font-size: 36px;
+  margin: 40px 0 20px;
+  font-weight: 700;
+  color: #222;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Paket container */
+.paket {
+  margin: 40px auto;
+  max-width: 1000px;
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  color: #222;
+}
+
+.paket-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  animation: fadeUp 0.8s ease-in-out;
+}
+
+/* Animasi masuk judul */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid kelas */
+.kelas-container {
+  display: flex;                /* pakai flex */
+  flex-wrap: wrap;              /* biar turun ke bawah kalau penuh */
+  justify-content: center;      /* rata tengah horizontal */
+  gap: 20px;                    /* jarak antar kotak */
+}
+
+
+/* Kotak kelas */
+.kelas-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover efek kelas */
+.kelas-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Animasi teks kelas */
+.kelas-card span {
+  display: inline-block;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.kelas-card:hover span {
+  transform: scale(1.1);
+  text-shadow: 0 4px 6px rgba(0,0,0,0.25);
+}
+
+/* Warna Paket */
+.paket-a {
+  background: linear-gradient(135deg, #fff9db, #ffe066);
+}
+.paket-b {
+  background: linear-gradient(135deg, #e3f2fd, #90caf9);
+}
+.paket-c {
+  background: linear-gradient(135deg, #f3e5f5, #ce93d8);
+}
+
+/* ==================== */
+/* Halaman Buku Kelas   */
+/* ==================== */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  /* Polkadot Background */
+  background-color: #fdfdfd; /* warna dasar */
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 30px 30px; /* jarak antar titik */
+}
+
+/* Box Header Modul */
+.modul-box {
+  background: linear-gradient(270deg, #FFD700, #FFEA00, #FFD700);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  color: #000;
+  border-radius: 15px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: inline-block;
+
+  /* animasi muncul dari atas */
+  animation: fadeDown 1s ease-out;
+}
+
+.modul-box .judul {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.modul-box .subjudul {
+  font-size: 16px;
+  margin-top: 3px;
+  font-weight: normal;
+}
+
+/* Mapel Style */
+.mapel {
+  text-align: center;
+  transition: transform 0.3s;
+  margin: 30px; /* jarak antar kotak */
+  opacity: 0; /* awalnya transparan */
+  animation: fadeBounce 1s ease-out forwards;
+}
+
+/* biar muncul bergantian */
+.mapel:nth-child(1) { animation-delay: 0.2s; }
+.mapel:nth-child(2) { animation-delay: 0.4s; }
+.mapel:nth-child(3) { animation-delay: 0.6s; }
+.mapel:nth-child(4) { animation-delay: 0.8s; }
+.mapel:nth-child(5) { animation-delay: 1s; }
+.mapel:nth-child(6) { animation-delay: 1.2s; }
+.mapel:nth-child(7) { animation-delay: 1.4s; }
+.mapel:nth-child(8) { animation-delay: 1.6s; }
+.mapel:nth-child(9) { animation-delay: 1.8s; }
+
+.mapel:hover {
+  transform: scale(1.05);
+}
+
+.mapel-icon {
+  width: 200px; /* ukuran gambar buku */
+  height: auto;
+}
+
+/* Title khusus kelas 1 */
+.title {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  background: linear-gradient(270deg, #FFD700, #FFEA00, #FFD700); /* kuning solid cerah */
+  background-size: 300% 300%;
+  padding: 12px 18px;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4); /* glow kuning */
+  
+  animation: gradientShift 6s infinite linear, pulseGlow 3s infinite ease-in-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+/* Hover efek lebih dramatis */
+.title:hover {
+  transform: scale(1.12) rotate(-2deg);
+  box-shadow: 0 12px 20px rgba(255, 200, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.8);
+  color: #111;
+}
+
+/* Animasi gradient */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow berdenyut */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); }
+  50% { box-shadow: 0 8px 20px rgba(255, 215, 0, 0.7); }
+}
+
+/* Efek masuk mapel (bounce + fade) */
+@keyframes fadeBounce {
+  0%   { opacity: 0; transform: scale(0.8) translateY(30px); }
+  60%  { opacity: 1; transform: scale(1.05) translateY(-10px); }
+  80%  { transform: scale(0.95) translateY(5px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Efek masuk header dari atas */
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === Navbar === */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.8);
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:12px; font-weight:700;
+}
+.brand__logo{
+  width:40px; height:40px; border-radius:50%;
+  display:grid; place-items:center;
+  background:var(--primary);
+  box-shadow:var(--shadow-sm);
+  color:var(--primary-ink);
+  font-weight:800;
+}
+.brand__text{ font-size:18px; letter-spacing:.3px; }
+
+.nav__menu{ display:flex; gap:14px; }
+.nav__link{
+  padding:8px 14px; border-radius:999px;
+  transition:.2s ease;
+}
+.nav__link:hover{ background:rgba(0,0,0,.05); }
+
+/* Judul */
+.paket-title-box {
+  display: inline-block;         
+  padding: 14px 32px;            
+  background: linear-gradient(135deg, #ffe066, #ffdd33); /* kuning gradasi */
+  color: #222;                  
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 14px;           
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12); 
+  margin: 0 auto 45px auto;      /* center horizontal + jarak bawah */
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeDown 0.8s ease-in-out;
+}
+
+/* Supaya judul benar-benar center */
+.paket-header {
+  text-align: center;
+}
+
+/* === Warna sesuai tingkatan Kelas 1 - 6 === */
+
+/* Kelas 1 (paling cerah - kuning) */
+.kelas-1 .modul-box,
+.kelas-1 .title {
+  background: linear-gradient(135deg, #fff176, #ffeb3b);
+  box-shadow: 0 4px 12px rgba(255, 235, 59, 0.5);
+}
+
+/* Kelas 2 */
+.kelas-2 .modul-box,
+.kelas-2 .title {
+  background: linear-gradient(135deg, #FFE082, #FFD54F);
+  box-shadow: 0 4px 12px rgba(255, 213, 79, 0.5);
+  color: #222;
+}
+
+/* Kelas 3 */
+.kelas-3 .modul-box,
+.kelas-3 .title {
+  background: linear-gradient(135deg, #FFD54F, #FFC107);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.5);
+  color: #222;
+}
+
+/* Kelas 4 */
+.kelas-4 .modul-box,
+.kelas-4 .title {
+  background: linear-gradient(135deg, #FFCA28, #FFB300);
+  box-shadow: 0 4px 12px rgba(255, 179, 0, 0.5);
+  color: #222;
+}
+
+/* Kelas 5 */
+.kelas-5 .modul-box,
+.kelas-5 .title {
+  background: linear-gradient(135deg, #FFB300, #FFA000);
+  box-shadow: 0 4px 12px rgba(255, 160, 0, 0.5);
+  color: #222;
+}
+
+/* Kelas 6 - kuning paling gelap */
+.kelas-6 .modul-box,
+.kelas-6 .title {
+  background: linear-gradient(135deg, #FF8F00, #F57F17);
+  box-shadow: 0 4px 12px rgba(245, 127, 23, 0.5);
+  color: #222;
+}
+
+/* === Warna sesuai tingkatan Kelas 7 - 9 (Biru) === */
+
+/* Override Title untuk kelas 7–9 */
+
+/* Kelas 7 */
+.kelas-7 .modul-box {
+  background: linear-gradient(135deg, #BBDEFB, #64B5F6);
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.6), 0 0 18px rgba(187, 222, 251, 0.6);
+  color: #222;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Kelas 8 */
+.kelas-8 .modul-box {
+  background: linear-gradient(135deg, #64B5F6, #2196F3);
+  box-shadow: 0 4px 14px rgba(33, 150, 243, 0.7), 0 0 20px rgba(100, 181, 246, 0.7);
+  color: #222;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Kelas 9 */
+.kelas-9 .modul-box {
+  background: linear-gradient(135deg, #2196F3, #0D47A1);
+  box-shadow: 0 4px 16px rgba(13, 71, 161, 0.8), 0 0 22px rgba(33, 150, 243, 0.7);
+  color: #222;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Kelas 7 */
+.kelas-7 .title {
+  background: linear-gradient(135deg, #BBDEFB, #64B5F6);
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.6), 0 0 15px rgba(187, 222, 251, 0.6);
+  color: #222;
+  animation: gradientShiftBlue 6s infinite linear, pulseGlowBlue 3s infinite ease-in-out;
+}
+
+/* Kelas 8 */
+.kelas-8 .title {
+  background: linear-gradient(135deg, #64B5F6, #2196F3);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.6), 0 0 15px rgba(100, 181, 246, 0.6);
+  color: #222;
+  animation: gradientShiftBlue 6s infinite linear, pulseGlowBlue 3s infinite ease-in-out;
+}
+
+/* Kelas 9 */
+.kelas-9 .title {
+  background: linear-gradient(135deg, #2196F3, #0D47A1);
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.7), 0 0 18px rgba(33, 150, 243, 0.6);
+  color: #222;
+  animation: gradientShiftBlue 6s infinite linear, pulseGlowBlue 3s infinite ease-in-out;
+}
+
+/* === Judul Modul Kelas 10 - 12 === */
+
+/* Kelas 10 */
+.kelas-10 .modul-box {
+  background: linear-gradient(135deg, #E1BEE7, #BA68C8);
+  box-shadow: 0 4px 12px rgba(186, 104, 200, 0.6), 0 0 18px rgba(225, 190, 231, 0.6);
+  color: #222;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Kelas 10 */
+.kelas-10 .title {
+  background: linear-gradient(135deg, #E1BEE7, #BA68C8);
+  box-shadow: 0 4px 12px rgba(186, 104, 200, 0.6), 0 0 18px rgba(225, 190, 231, 0.6);
+  color: #222;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Kelas 8 */
+.kelas-8 .modul-box {
+  background: linear-gradient(135deg, #64B5F6, #2196F3);
+  box-shadow: 0 4px 14px rgba(33, 150, 243, 0.7), 0 0 20px rgba(100, 181, 246, 0.7);
+  color: #fff;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Kelas 9 */
+.kelas-9 .modul-box {
+  background: linear-gradient(135deg, #2196F3, #0D47A1);
+  box-shadow: 0 4px 16px rgba(13, 71, 161, 0.8), 0 0 22px rgba(33, 150, 243, 0.7);
+  color: #fff;
+  animation: fadeDown 1s ease-out;
+}
+
+/* Animasi khusus biru */
+@keyframes gradientShiftBlue {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseGlowBlue {
+  0%, 100% { box-shadow: 0 4px 12px rgba(100, 181, 246, 0.5); }
+  50% { box-shadow: 0 8px 20px rgba(33, 150, 243, 0.8); }
+}

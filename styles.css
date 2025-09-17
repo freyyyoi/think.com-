@@ -1,0 +1,612 @@
+        /* === Root & Reset === */
+        :root {
+          --bg: #ffffff;
+          --ink: #1f2937;
+          --muted: #6b7280;
+          --primary: #ffd84d;
+          --primary-ink: #3b3b3b;
+          --card: #2f3136;
+          --radius: 18px;
+          --radius-lg: 28px;
+          --shadow-sm: 0 2px 8px rgba(0, 0, 0, .06);
+          --shadow-md: 0 10px 30px rgba(0, 0, 0, .10);
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        html,
+        body {
+          height: 100%;
+        }
+
+        body {
+          margin: 0;
+          font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+          color: var(--ink);
+          background:
+            radial-gradient(rgba(0, 0, 0, .035) 1px, transparent 1px) 0 0/18px 18px,
+            var(--bg);
+          line-height: 1.6;
+        }
+
+        img {
+          max-width: 100%;
+          display: block;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        /* === Layout helpers === */
+        .container {
+          width: min(1120px, 92vw);
+          margin-inline: auto;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+
+        .section--muted {
+          background: #fff;
+        }
+
+        .section__title {
+          text-align: center;
+          font-size: clamp(20px, 2.4vw, 28px);
+          font-weight: 700;
+          margin: 0 0 28px;
+          letter-spacing: .5px;
+        }
+
+        .lead {
+          text-align: center;
+          color: var(--muted);
+          max-width: 850px;
+          margin: 0 auto;
+        }
+
+        /* === Navbar === */
+        .navbar-brand img {
+          height: 45px;
+          /* fix tinggi logo */
+          width: auto;
+          /* biar proporsional */
+        }
+
+        .navbar-brand span {
+          font-size: 1.2rem;
+          /* ukuran teks konsisten */
+          color: #333;
+          /* warna teks */
+        }
+
+
+        .nav {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background: rgba(255, 255, 255, .8);
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid rgba(0, 0, 0, .06);
+        }
+
+        .nav__inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 0;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-weight: 700;
+        }
+
+        .brand__logo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          background: var(--primary);
+          box-shadow: var(--shadow-sm);
+          color: var(--primary-ink);
+          font-weight: 800;
+        }
+
+        .brand__text {
+          font-size: 18px;
+          letter-spacing: .3px;
+        }
+
+        .nav__menu {
+          display: flex;
+          gap: 14px;
+        }
+
+        .nav__link {
+          padding: 8px 14px;
+          border-radius: 999px;
+          transition: .2s ease;
+        }
+
+        .nav__link:hover {
+          background: rgba(0, 0, 0, .05);
+        }
+
+        /* === Hero & Slideshow === */
+        .hero {
+          padding: 24px 0 36px;
+        }
+
+
+
+        .slider {
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          box-shadow: var(--shadow-md);
+          position: relative;
+        }
+
+        .slides {
+          display: flex;
+          width: 300%;
+          animation: slide 5s infinite;
+        }
+
+        .slide {
+          width: 100%;
+          aspect-ratio: 16/6;
+          background:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg) center/cover no-repeat;
+          background-image:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg);
+          /* custom image via CSS var */
+          background-image:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg), var(--bg);
+          background:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg) center/cover no-repeat;
+          /* real image layer: */
+          background-image:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg), var(--bg), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg), var(--bg), var(--bg);
+          /* Use custom property for the image */
+          background:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg) center/cover no-repeat,
+            var(--bg) center/cover no-repeat;
+          background-image:
+            linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)),
+            var(--bg), var(--bg), var(--bg), var(--bg), var(--bg);
+          /* final (browser will use last): */
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat, var(--bg) center/cover no-repeat, var(--bg);
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          /* actual image injected: */
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+          /* final: use CSS var --bg for image */
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          /* The important one: */
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+          background: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg) center/cover no-repeat;
+          /* inject image url via style="--bg:url(...)" */
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+        }
+
+        .slide {
+          background-image: linear-gradient(to top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1)), var(--bg);
+        }
+
+        .slide__overlay {
+          height: 100%;
+          display: grid;
+          place-items: center;
+          text-align: center;
+          color: #fff;
+          padding: 18px;
+        }
+
+        .slide__title {
+          margin: 0;
+          font-size: clamp(20px, 3.2vw, 36px);
+          font-weight: 700;
+        }
+
+        .slide__subtitle {
+          margin: 6px 0 0;
+          opacity: .9;
+        }
+
+        @keyframes slide {
+
+          0%,
+          30% {
+            transform: translateX(0%);
+          }
+
+          33%,
+          63% {
+            transform: translateX(-33.333%);
+          }
+
+          66%,
+          96% {
+            transform: translateX(-66.666%);
+          }
+
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        /* Quick actions */
+        .quick-actions {
+          margin-top: 18px;
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        /* Pills & Badges */
+        .pill {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 18px;
+          border-radius: 999px;
+          font-weight: 600;
+          transition: .2s ease;
+          border: 1px solid transparent;
+        }
+
+        .pill--primary {
+          background: var(--primary);
+          color: var(--primary-ink);
+          box-shadow: var(--shadow-sm);
+        }
+
+        .pill--primary:hover {
+          filter: brightness(.96);
+          transform: translateY(-1px);
+        }
+
+        .pill--ghost {
+          background: #fff;
+          border-color: #e5e7eb;
+        }
+
+        .pill--ghost:hover {
+          background: #f5f5f5;
+        }
+
+        .badge {
+          display: inline-block;
+          background: var(--primary);
+          color: var(--primary-ink);
+          font-weight: 700;
+          padding: 8px 14px;
+          border-radius: 999px;
+          box-shadow: var(--shadow-sm);
+        }
+
+        /* Cards & Grid */
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 18px;
+        }
+
+        @media (max-width: 900px) {
+          .grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 620px) {
+          .grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .card {
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+          border-radius: var(--radius);
+          overflow: hidden;
+          box-shadow: var(--shadow-md);
+        }
+
+        .card__thumb {
+          background: var(--card);
+          aspect-ratio: 16/9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 200px;
+          /* fallback */
+        }
+
+        .card__body {
+          padding: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .card__title {
+          font-size: 16px;
+          margin: 0;
+          color: var(--muted);
+          font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+          padding: 24px 0 42px;
+          color: var(--muted);
+        }
+
+        .footer__inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          border-top: 1px solid rgba(0, 0, 0, .08);
+          padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+          .footer__inner {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+
+        .footer__links {
+          display: flex;
+          gap: 14px;
+        }
+
+        .footer__links a {
+          color: inherit;
+        }
+
+        .footer__links a:hover {
+          color: var(--ink);
+        }
+
+        /* Accessibility tweaks */
+        :focus-visible {
+          outline: 3px solid #111;
+          outline-offset: 2px;
+        }
+
+        /* === Slider / Carousel === */
+        .carousel-item img {
+          width: 100%;
+          height: 72vh;
+          /* tinggi pakai viewport height biar fleksibel */
+          max-height: 720px;
+          /* batasi agar tidak terlalu tinggi di layar besar */
+          min-height: 300px;
+          /* biar tetap terlihat di layar kecil */
+          object-fit: cover;
+          /* gambar proporsional, tidak gepeng */
+          object-position: center;
+          /* fokus di tengah gambar */
+          border-radius: var(--radius-lg);
+        }
+
+        /* Caption */
+        .carousel-caption {
+          background: rgba(0, 0, 0, 0.4);
+          padding: 15px 20px;
+          border-radius: 12px;
+          backdrop-filter: blur(3px);
+          /* efek kaca */
+        }
+
+        /* Responsive tweak */
+        @media (max-width: 768px) {
+          .carousel-item img {
+            height: 40vh;
+            /* lebih pendek di HP */
+            max-height: 400px;
+          }
+
+          .carousel-caption {
+            font-size: 14px;
+            padding: 10px 14px;
+          }
+        }
+
+
+
+        /* Tombol floating WhatsApp */
+        .wa-float {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #25d366;
+          color: white;
+          font-size: 24px;
+          padding: 14px 18px;
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+          z-index: 1000;
+          transition: transform .2s ease;
+        }
+
+        .wa-float:hover {
+          transform: scale(1.1);
+        }
+
+        /* Popup WhatsApp */
+        .wa-popup {
+          display: none;
+          position: fixed;
+          bottom: 80px;
+          right: 20px;
+          width: 260px;
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+          z-index: 1000;
+          animation: fadeIn .3s ease;
+        }
+
+        .wa-content {
+          padding: 16px;
+          text-align: center;
+        }
+
+        .wa-content p {
+          margin: 0 0 12px;
+          font-size: 14px;
+          color: #333;
+        }
+
+        .wa-btn {
+          display: inline-block;
+          background: #25d366;
+          color: white;
+          padding: 10px 14px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+        .wa-btn:hover {
+          background: #1ebe5b;
+        }
+
+        .wa-close {
+          position: absolute;
+          top: 8px;
+          right: 12px;
+          cursor: pointer;
+          font-size: 18px;
+          color: #666;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Hilangkan garis/ruang abu-abu setelah carousel */
+        #carouselExampleIndicators {
+          margin-bottom: 0 !important;
+        }
+
+        #tugas.container {
+          margin-top: 0 !important;
+          /* hapus jarak antara carousel dan section tugas */
+          padding-top: 3rem;
+          /* biar tetap ada spasi di dalamnya */
+        }
+
+        .carousel {
+          border-bottom: none !important;
+          box-shadow: none !important;
+        }
+
+        /* Popup styling */
+        .wa-popup {
+          display: none;
+          position: fixed;
+          bottom: 90px;
+          right: 20px;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          width: 250px;
+          padding: 15px;
+          z-index: 1000;
+        }
+
+        .wa-content {
+          text-align: center;
+          position: relative;
+        }
+
+        .wa-close {
+          position: absolute;
+          top: 5px;
+          right: 10px;
+          font-size: 18px;
+          cursor: pointer;
+        }
+
+        /* Tombol WhatsApp */
+        .wa-btn {
+          display: inline-block;
+          background: #25d366;
+          /* hijau WhatsApp */
+          color: #fff !important;
+          /* teks putih, tidak biru */
+          font-weight: bold;
+          text-decoration: none;
+          /* hilangkan underline */
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
+
+        .wa-btn:hover {
+          background: #1ebe5d;
+        }
+
+        /* Floating button */
+        .wa-float {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #25d366;
+          color: #fff;
+          font-size: 28px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+          z-index: 1000;
+        }
